@@ -141,6 +141,7 @@ $(document).ready(function($) {
                 $('#form-contact-submit').text('Enviado');
                 let button = document.querySelector('#sent-alert');
                 button.classList.remove('hide');
+                
         
             }else{
                 // Imprimimos la respuesta en el div result
