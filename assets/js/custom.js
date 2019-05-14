@@ -119,7 +119,14 @@ $(document).ready(function($) {
 
     $(".form .btn[type='submit']").on("click", function(){
         var formData = new FormData($('#form-contact')[0]);
-        $('#form-contact-submit').text('Enviando...');
+        let button = document.querySelector('#sent-alert');
+        let text = document.createTextNode('Enviando')
+       
+        button.classList.add('alert-info');
+        
+        button.appendChild(text)
+        button.classList.remove('hide');
+        
         $.ajax({
         type: 'POST',
         url: "/assets/php/email.php", 
@@ -139,9 +146,7 @@ $(document).ready(function($) {
                 $('#form-contact-email').val();
                 $('#form-contact-message').val();
                 $('#form-contact-submit').text('Enviado');
-                let button = document.querySelector('#sent-alert');
-                button.classList.remove('hide');
-                
+             button.classList.add('alert-succes');
         
             }else{
                 // Imprimimos la respuesta en el div result
